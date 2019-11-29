@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $user->name . ' 的个人中心')
+@section('title', $user->name . بروفيل)
 
 @section('content')
 
@@ -10,10 +10,10 @@
     <div class="card ">
       <img class="card-img-top" src="{{ $user->avatar }}" alt="{{ $user->name }}">
       <div class="card-body">
-        <h5><strong>注册于</strong></h5>
+        <h5><strong>عضو منذ</strong></h5>
         <p>{{ $user->created_at->diffForHumans() }}</p>
         <hr>
-        <h5><strong>最后活跃</strong></h5>
+        <h5><strong>اخر نشاط</strong></h5>
         <p title="{{  $user->last_actived_at }}">{{ $user->last_actived_at->diffForHumans() }}</p>
       </div>
     </div>
@@ -32,12 +32,12 @@
         <ul class="nav nav-tabs">
           <li class="nav-item">
             <a class="nav-link bg-transparent {{ active_class(if_query('tab', null)) }}" href="{{ route('users.show', $user->id) }}">
-              Ta 的话题
+              المواضيع
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link bg-transparent {{ active_class(if_query('tab', 'replies')) }}" href="{{ route('users.show', [$user->id, 'tab' => 'replies']) }}">
-              Ta 的回复
+              الردود
             </a>
           </li>
         </ul>
