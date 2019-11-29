@@ -72,6 +72,7 @@
 			return User::create([
 				'name' => $data['name'],
 				'email' => $data['email'],
+				'email_verified_at'=> now(),
 				'password' => Hash::make($data['password']),
 			]);
 		}
